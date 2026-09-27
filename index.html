@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aliesya Faziera — HR &amp; Administration Professional</title>
+<meta name="description" content="Aliesya Faziera: full-spectrum HR and Administration professional in Rawang, Selangor. Payroll, statutory compliance, industrial relations, foreign worker management, recruitment and training.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --hero-bg:#4b2838;
+    --hero-ink:#fbeee9;
+    --hero-accent:#f2b8c2;
+    --hero-chip:rgba(255,255,255,.1);
+    --outline:rgba(242,184,194,.32);
+    --block:#c7727f;
+    --frame-bg:#3a1e2b;
+    --spark:#f6d38f;
+    --bg:#fcf4f1;
+    --bg-alt:#f6e6e2;
+    --ink:#3b2630;
+    --muted:#7b6168;
+    --heading:#4b2838;
+    --line:#efdcd8;
+    --line-strong:#e2c6c4;
+    --soft:#f6e0df;
+    --accent:#bf6a7c;
+    --accent-dark:#9a4d5e;
+    --deep:#4b2838;
+    --deep-ink:#f2d4d9;
+    --nav-bg:rgba(252,244,241,.94);
+    --nav-line:#efdcd8;
+    --nav-ink:#4b2838;
+    --card:#ffffff;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Quicksand",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;font-size:17px;font-weight:500;overflow-x:hidden}
+  h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.1}
+  a{color:inherit}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(8px);border-bottom:1px solid var(--nav-line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:"Playfair Display",serif;font-weight:900;font-size:1.3rem;color:var(--nav-ink);text-decoration:none;letter-spacing:.02em}
+  .logo span{color:var(--accent)}
+  .links{display:flex;gap:24px;list-style:none}
+  .links a{text-decoration:none;color:var(--nav-ink);font-weight:600;font-size:.92rem;opacity:.85}
+  .links a:hover{opacity:1;color:var(--accent)}
+  @media (max-width:900px){.links{display:none}}
+
+  /* HERO */
+  .hero{position:relative;background:var(--hero-bg);color:var(--hero-ink);overflow:hidden;padding:130px 0 110px}
+  .pattern{position:absolute;right:-2%;font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(5rem,11vw,10.5rem);line-height:1;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px var(--outline);letter-spacing:.02em;pointer-events:none;user-select:none}
+  .pattern.top{top:-18px}
+  .pattern.bottom{bottom:-30px}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
+  .kicker{font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:.82rem;color:var(--hero-accent);margin-bottom:18px}
+  .hero h1{font-size:clamp(3.2rem,8vw,6rem);font-weight:900;color:var(--hero-ink);text-transform:uppercase;letter-spacing:.01em;margin-bottom:22px}
+  .hero .tagline{font-size:1.2rem;max-width:30em;color:var(--hero-ink);opacity:.92;margin-bottom:22px}
+  .hero-links{display:grid;gap:4px;font-size:.98rem;color:var(--hero-accent);font-weight:600;margin-bottom:26px}
+  .hero-links a{text-decoration:none}
+  .hero-links a:hover{text-decoration:underline}
+  .btns{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:.95rem;transition:.2s}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.primary:hover{background:var(--accent-dark)}
+  .btn.ghost{border:2px solid var(--hero-accent);color:var(--hero-ink)}
+  .btn.ghost:hover{background:var(--hero-accent);color:var(--hero-bg)}
+  .status{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-size:.9rem;font-weight:700;color:var(--hero-ink);background:var(--hero-chip);padding:8px 16px;border-radius:999px}
+  .dot{width:9px;height:9px;border-radius:50%;background:#5fbf7a;box-shadow:0 0 0 4px rgba(95,191,122,.25)}
+
+  .portrait{position:relative;justify-self:center;width:min(380px,82vw)}
+  .portrait::before{content:"";position:absolute;inset:-20px -20px 20px 20px;background:var(--block);border-radius:14px}
+  .portrait .frame{position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:var(--frame-bg);box-shadow:0 24px 50px rgba(0,0,0,.25)}
+  .portrait img{width:100%;height:100%;object-fit:cover}
+  .portrait .initials{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-weight:900;font-size:5rem;color:var(--accent)}
+  .portrait.no-img .initials{display:flex}
+  .spark{position:absolute;color:var(--spark);font-size:2rem;line-height:1}
+  .spark.s1{top:-44px;left:-38px}
+  .spark.s2{bottom:10px;left:-46px;font-size:1.3rem}
+  @media (max-width:860px){
+    .hero{padding:48px 0 70px}
+    .hero .wrap{grid-template-columns:1fr;gap:56px}
+    .portrait{order:-1;width:min(290px,72vw);margin-top:20px}
+  }
+
+  /* SECTIONS */
+  section{padding:88px 0}
+  .alt{background:var(--bg-alt)}
+  .eyebrow{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:.85rem;color:var(--ink);margin-bottom:14px}
+  .eyebrow::before{content:"✦";color:var(--accent)}
+  .title{font-size:clamp(2.2rem,5vw,3.4rem);font-style:normal;font-weight:900;color:var(--heading);margin-bottom:34px}
+  .hl{color:var(--accent-dark);font-weight:700}
+
+  /* WHY */
+  .why{display:grid;grid-template-columns:1fr 1.6fr;gap:56px;align-items:start}
+  .why .big{font-family:"Playfair Display",serif;font-size:clamp(3.6rem,9vw,6.2rem);font-weight:900;font-style:normal;color:var(--accent);line-height:1}
+  .why .big small{display:block;font-size:1rem;font-family:"Quicksand",sans-serif;font-style:normal;font-weight:600;color:var(--muted);letter-spacing:.04em;margin-top:14px;line-height:1.5}
+  .why p{margin-bottom:18px;font-size:1.05rem}
+  .pull{font-family:"Playfair Display",serif;font-style:italic;font-size:1.45rem;color:var(--heading);border-left:4px solid var(--accent);padding:4px 0 4px 20px;margin:28px 0}
+  @media (max-width:800px){.why{grid-template-columns:1fr;gap:20px}}
+
+  /* PROFILE */
+  .profile{display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:start}
+  .profile p{margin-bottom:18px;font-size:1.05rem}
+  .pills{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+  .pill{padding:10px 20px;border-radius:999px;font-weight:700;font-size:.93rem}
+  .pill span{font-weight:500;opacity:.8;margin-right:6px}
+  .p1{background:var(--accent);color:#fff}
+  .p2{background:var(--soft);color:var(--ink)}
+  .p3{background:var(--deep);color:#fff}
+  .p4{border:2px solid var(--ink);color:var(--ink)}
+  .snap{position:relative;margin-top:30px;margin-right:26px}
+  .snap::before{content:"";position:absolute;inset:28px -28px -28px 28px;background:var(--deep);border-radius:14px}
+  .snap figure{position:relative}
+  .snap .ph{aspect-ratio:5/6;border-radius:12px;overflow:hidden;background:var(--line-strong);box-shadow:0 18px 40px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600;text-align:center;padding:0}
+  .snap .ph img{width:100%;height:100%;object-fit:cover}
+  .snap .ph .empty{display:none;padding:20px}
+  .snap .ph.no-img .empty{display:block}
+  .snap figcaption{position:relative;font-size:.9rem;color:var(--deep-ink);padding:14px 10px 0 44px;font-weight:600}
+  @media (max-width:860px){.profile{grid-template-columns:1fr}.snap{margin:30px 26px 40px 0}}
+
+  /* WHY HIRE */
+  .hire{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .hire .c{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;position:relative;overflow:hidden}
+  .hire .c::after{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:var(--accent)}
+  .hire .n{font-family:"Playfair Display",serif;font-weight:900;font-size:2.6rem;color:var(--accent-dark);line-height:1}
+  .hire h3{font-size:1.15rem;margin:10px 0 8px;color:var(--heading)}
+  .hire p{font-size:.93rem;color:var(--muted)}
+  @media (max-width:960px){.hire{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:540px){.hire{grid-template-columns:1fr}}
+
+  .facts{margin-top:28px;background:var(--deep);color:#fff;border-radius:var(--radius);padding:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px 36px}
+  .facts dt{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7;font-weight:700}
+  .facts dd{font-weight:600;font-size:1rem}
+  @media (max-width:760px){.facts{grid-template-columns:1fr}}
+
+  /* CAPABILITIES */
+  .caps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .cap{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .cap h3{font-size:1.15rem;color:var(--heading);margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid var(--soft)}
+  .cap ul{list-style:none;font-size:.95rem}
+  .cap li{padding:5px 0 5px 22px;position:relative}
+  .cap li::before{content:"✦";position:absolute;left:0;color:var(--accent);font-size:.8rem;top:8px}
+  @media (max-width:960px){.caps{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:540px){.caps{grid-template-columns:1fr}}
+
+  /* BUILD LOG */
+  .log{border-top:1px solid var(--line)}
+  .entry{display:grid;grid-template-columns:150px 1fr;gap:32px;padding:34px 0;border-bottom:1px solid var(--line)}
+  .entry .when{font-weight:700;color:var(--accent-dark);font-size:.95rem;line-height:1.5}
+  .entry .when small{display:block;color:var(--muted);font-weight:600;font-size:.82rem;margin-top:4px}
+  .entry h3{font-size:1.5rem;color:var(--heading);margin-bottom:10px}
+  .entry p{font-size:1rem;margin-bottom:12px}
+  .impact{display:inline-block;background:var(--soft);color:var(--accent-dark);font-weight:700;font-size:.88rem;padding:5px 14px;border-radius:8px;margin-bottom:12px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-size:.8rem;font-weight:700;border:1.5px solid var(--line-strong);color:var(--muted);padding:3px 12px;border-radius:999px}
+  @media (max-width:700px){.entry{grid-template-columns:1fr;gap:8px}}
+
+  /* EXPERIENCE */
+  .job{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:32px 0;border-top:1px solid var(--line)}
+  .job:first-child{border-top:none;padding-top:0}
+  .job .date{font-weight:700;color:var(--accent-dark);font-size:.95rem}
+  .job h3{font-size:1.4rem;color:var(--heading)}
+  .job .co{font-weight:700;color:var(--muted);margin:4px 0 12px}
+  .job ul{padding-left:20px;font-size:.98rem}
+  .job li{margin-bottom:6px}
+  @media (max-width:700px){.job{grid-template-columns:1fr;gap:6px}}
+
+  /* EDUCATION */
+  .edu{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ecard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .ecard .lbl{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--accent-dark);margin-bottom:10px}
+  .ecard h3{font-size:1.2rem;color:var(--heading);margin-bottom:6px}
+  .ecard p{font-size:.94rem;color:var(--muted)}
+  .badge{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;padding:4px 12px;border-radius:999px;font-weight:700;font-size:.82rem}
+  @media (max-width:900px){.edu{grid-template-columns:1fr}}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+  .chip{background:var(--card);border:1px solid var(--line);padding:8px 16px;border-radius:999px;font-weight:600;font-size:.92rem}
+
+  /* INTERESTS */
+  .interests p{max-width:46em;font-size:1.05rem;margin-bottom:16px}
+
+  /* CONTACT */
+  .contact{background:var(--hero-bg);color:var(--hero-ink);text-align:center;position:relative;overflow:hidden}
+  .contact h2{font-size:clamp(2.4rem,6vw,4.2rem);font-style:normal;font-weight:900;color:var(--hero-ink);margin-bottom:16px}
+  .contact p{max-width:36em;margin:0 auto 28px;opacity:.9}
+  .contact .btns{justify-content:center}
+  .contact .eyebrow{justify-content:center;color:var(--hero-accent)}
+  footer{background:var(--hero-bg);color:var(--hero-ink);opacity:.95;text-align:center;font-size:.85rem;padding:0 20px 30px}
+  footer span{opacity:.6}
+
+  /* CAMPING GALLERY */
+  .camp{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding-bottom:28px}
+  .tile{aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--line-strong);box-shadow:0 14px 30px rgba(0,0,0,.14)}
+  .tile img,.tile video{width:100%;height:100%;object-fit:cover;display:block}
+  .t2,.t4{transform:translateY(28px)}
+  @media (max-width:860px){.camp{grid-template-columns:1fr;gap:32px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">Aliesya<span>.</span></a>
+    <ul class="links">
+      <li><a href="#why">Why</a></li>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#capabilities">Capabilities</a></li>
+      <li><a href="#programmes">Programmes</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Let's Talk</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="pattern top" aria-hidden="true">FAZIERA FAZIERA</div>
+  <div class="pattern bottom" aria-hidden="true">PEOPLE PEOPLE</div>
+  <div class="wrap">
+    <div>
+      <p class="kicker">HR &amp; Administration Professional</p>
+      <h1>Aliesya<br>Faziera</h1>
+      <p class="tagline">Full-spectrum HR professional who keeps payroll accurate, compliance tight and people supported, from the first interview to the last day.</p>
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/alliesya-fauzi/" target="_blank" rel="noopener">LI: /alliesya-fauzi</a>
+        <a href="mailto:alliesyafauzi@gmail.com">Email: alliesyafauzi@gmail.com</a>
+      </div>
+      <div class="btns">
+        <a class="btn primary" href="mailto:alliesyafauzi@gmail.com">Let's talk</a>
+        <a class="btn ghost" href="Resume%20Aliesya.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+      <span class="status"><span class="dot"></span>Open to HR roles · Klang Valley</span>
+    </div>
+    <div class="portrait" id="portrait">
+      <span class="spark s1">✦</span><span class="spark s2">✦</span>
+      <div class="frame">
+        <img src="dp.jpeg" alt="Aliesya Faziera" onerror="this.remove();document.getElementById('portrait').classList.add('no-img')">
+        <span class="initials">AF</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ WHY ============ -->
+<section id="why">
+  <div class="wrap why">
+    <div>
+      <p class="eyebrow">Why</p>
+      <div class="big">Why HR?<small>The short answer: I've always been drawn to people.</small></div>
+    </div>
+    <div>
+      <p>I grew up in <span class="hl">Geneva, Switzerland</span>, where I lived until I was 17 and studied at Collège du Léman. Growing up in such an international city meant my classmates and neighbours came from all over the world, and I learned early how to get along with people of every background. It's also where I picked up my French.</p>
+      <p>Even as a child, I was always drawn to anything that involved people: organising, helping, listening and bringing others together. When I came home to Malaysia and started working, that instinct naturally pulled me towards roles where people come first, from coordinating programmes and supporting students at the Youth Empowerment Foundation to, eventually, <span class="hl">human resources</span>.</p>
+      <p class="pull">"Good HR is simple: people should be treated fairly, paid correctly, and supported to do their best work."</p>
+      <p>Today I handle the full spectrum of HR, from payroll and statutory contributions to foreign worker compliance, recruitment, discipline and training. I'm also deepening that knowledge through a <span class="hl">Master's in Human Resource Management</span>, graduating in 2027. HR isn't something I fell into. It's where I've always been heading.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROFILE ============ -->
+<section id="profile" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Profile</p>
+    <h2 class="title">Hi, I'm Aliesya!</h2>
+    <div class="profile">
+      <div>
+        <p>I'm an HR and Administration professional with <span class="hl">6+ years of experience</span> across telecommunications, property management and corporate services. Most recently I've been running HR for a multi-branch retail operation: payroll for up to 90 employees, foreign worker permits, recruitment, disciplinary matters, and training for teams across 7 branches.</p>
+        <p>I'm at my best when I'm building structure: clear SOPs, fair policies, clean records and a payroll that simply works every month. I'm also the person staff can talk to when something isn't right, because good HR is as much about trust as it is about paperwork.</p>
+        <p>Alongside work, I'm completing a <span class="hl">Master of Human Resource Management</span> at Open University Malaysia, where I've been on the Dean's List every semester and will graduate in 2027. Having grown up in Geneva, I'm comfortable working with people from different cultures, and I can converse in French when it's needed.</p>
+        <div class="pills">
+          <span class="pill p1"><span>Base:</span>Rawang, Selangor</span>
+          <span class="pill p2"><span>Focus:</span>Full-spectrum HR</span>
+          <span class="pill p3"><span>Studying:</span>Master's in HRM, OUM (2027)</span>
+          <span class="pill p4"><span>Languages:</span>Malay · English · French</span>
+          <span class="pill p1"><span>Raised in:</span>Geneva, Switzerland</span>
+          <span class="pill p2"><span>Notice:</span>1 month (2 weeks negotiable)</span>
+        </div>
+      </div>
+      <div class="snap" id="snapwrap">
+        <figure>
+          <div class="ph" id="snap">
+            <img src="photo2.jpg.jpeg" alt="Aliesya at work" onerror="this.remove()">
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY HIRE ME ============ -->
+<section id="hire">
+  <div class="wrap">
+    <p class="eyebrow">For recruiters</p>
+    <h2 class="title">Why hire me</h2>
+    <div class="hire">
+      <div class="c"><div class="n">90</div><h3>Proven at scale</h3><p>Monthly payroll for up to 90 employees, 20+ hires onboarded, and admin across 7 retail branches.</p></div>
+      <div class="c"><div class="n">Day 1</div><h3>Ready to start working</h3><p>Already hands-on with Info-Tech HRMS, Xenix and FWCMS, so there's very little system training needed.</p></div>
+      <div class="c"><div class="n">100%</div><h3>Compliance-minded</h3><p>EPF, SOCSO, EIS and PCB handled on time, foreign worker permits kept valid, and records kept audit-ready.</p></div>
+      <div class="c"><div class="n">IR</div><h3>Handles the hard parts</h3><p>Disciplinary matters and show cause letters handled fairly, consistently and in line with company policy.</p></div>
+    </div>
+    <dl class="facts">
+      <div><dt>Target roles</dt><dd>HR Executive · HR &amp; Admin · HR Manager</dd></div>
+      <div><dt>Location</dt><dd>Rawang · Klang Valley (Rawang preferred)</dd></div>
+      <div><dt>Availability</dt><dd>1 month notice (2 weeks negotiable)</dd></div>
+      <div><dt>Education</dt><dd>Master's in HRM (graduating 2027)</dd></div>
+      <div><dt>Industries</dt><dd>Telecommunications · Retail · Property · Corporate services</dd></div>
+      <div><dt>Team leadership</dt><dd>Supervised 15–20 staff</dd></div>
+      <div><dt>Background</dt><dd>Raised in Geneva · multicultural</dd></div>
+      <div><dt>References</dt><dd>Available upon request</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ CAPABILITIES ============ -->
+<section id="capabilities" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Capabilities</p>
+    <h2 class="title">What I work with</h2>
+    <div class="caps">
+      <div class="cap">
+        <h3>Payroll &amp; Statutory</h3>
+        <ul><li>End-to-end payroll, up to 90 staff</li><li>EPF, SOCSO, EIS &amp; PCB</li><li>Overtime, allowances &amp; deductions</li><li>Info-Tech HRMS &amp; Xenix</li></ul>
+      </div>
+      <div class="cap">
+        <h3>People &amp; Relations</h3>
+        <ul><li>Employee &amp; industrial relations</li><li>Disciplinary matters</li><li>Show cause letters</li><li>Policy compliance</li></ul>
+      </div>
+      <div class="cap">
+        <h3>Talent</h3>
+        <ul><li>End-to-end recruitment</li><li>Interviews &amp; screening</li><li>Onboarding &amp; orientation</li><li>Leadership, motivation &amp; team-building training</li></ul>
+      </div>
+      <div class="cap">
+        <h3>Compliance &amp; Admin</h3>
+        <ul><li>FOMEMA, FWCMS &amp; work permits</li><li>SOPs, policies &amp; incentive schemes</li><li>Audit-ready records</li><li>Multi-branch operations</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMMES (BUILD LOG) ============ -->
+<section id="programmes">
+  <div class="wrap">
+    <p class="eyebrow">Programmes &amp; Initiatives</p>
+    <h2 class="title">Work I've led</h2>
+    <div class="log">
+
+      <div class="entry">
+        <p class="when">2025 – Present<small>HR Manager</small></p>
+        <div>
+          <h3>Team-Building, Motivation &amp; Leadership Programmes</h3>
+          <p>I designed and ran training programmes to strengthen teamwork, morale and staff performance across the business. I handled everything from planning the activities and objectives to coordinating logistics and running the sessions on the day.</p>
+          <span class="impact">Outcome: stronger teamwork and morale across branch teams</span>
+          <div class="tags"><span class="tag">Training design</span><span class="tag">Facilitation</span><span class="tag">Employee engagement</span></div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <p class="when">2025 – Present<small>HR Manager</small></p>
+        <div>
+          <h3>SOPs &amp; Incentive Schemes for 7 Retail Branches</h3>
+          <p>With seven branches running at the same time, everyone needed to follow the same playbook. I wrote and rolled out Standard Operating Procedures, incentive schemes and internal policies so that staff at every branch knew what was expected and how good work would be rewarded.</p>
+          <span class="impact">Impact: employee productivity improved by 85%</span>
+          <div class="tags"><span class="tag">Policy writing</span><span class="tag">Change management</span><span class="tag">Multi-branch</span></div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <p class="when">2025 – Present<small>HR Manager</small></p>
+        <div>
+          <h3>Foreign Worker Compliance, End to End</h3>
+          <p>I own the full foreign worker process: FOMEMA medical screening, work permit applications and renewals through FWCMS, and all supporting documentation. I track renewal dates so that permits never lapse and every worker stays legal and documented.</p>
+          <span class="impact">Impact: full compliance with immigration and labour regulations</span>
+          <div class="tags"><span class="tag">FOMEMA</span><span class="tag">FWCMS</span><span class="tag">Work permits</span></div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <p class="when">2025 – Present<small>HR Manager</small></p>
+        <div>
+          <h3>Payroll for 90 Employees</h3>
+          <p>I run the complete monthly payroll cycle: salary computation, overtime, allowances, deductions and statutory contributions for EPF, SOCSO, EIS and PCB. Payroll, attendance and leave are managed in Info-Tech and Xenix, which keeps data accurate and reporting straightforward.</p>
+          <span class="impact">Impact: 100% accurate, on-time monthly pay</span>
+          <div class="tags"><span class="tag">Payroll</span><span class="tag">Statutory</span><span class="tag">Info-Tech</span><span class="tag">Xenix</span></div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <p class="when">2025 – Present<small>HR Manager</small></p>
+        <div>
+          <h3>Recruitment &amp; Onboarding Drive</h3>
+          <p>I ran the full hiring cycle, from writing job advertisements and screening candidates to coordinating interviews, then onboarding and orienting new staff so they could settle in and contribute quickly.</p>
+          <span class="impact">Impact: 20+ new employees hired and onboarded</span>
+          <div class="tags"><span class="tag">Recruitment</span><span class="tag">Interviewing</span><span class="tag">Onboarding</span></div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <p class="when">2025 – Present<small>HR Manager</small></p>
+        <div>
+          <h3>Audit-Ready Records System</h3>
+          <p>I built a structured document management and filing system for HR and operational records, so that anything important can be found in minutes and the company is ready for an audit at any time, not only when one is announced.</p>
+          <span class="impact">Impact: 100% audit readiness</span>
+          <div class="tags"><span class="tag">Records management</span><span class="tag">Compliance</span></div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <p class="when">2025 – Present<small>Master's research</small></p>
+        <div>
+          <h3>Research: Job Demands, Job Resources &amp; Employee Disengagement</h3>
+          <p>For my Master's at OUM, I'm researching what drives employee disengagement among Malaysian employees, using the Job Demands–Resources (JD-R) model. It's directly useful in practice, because it shows which workplace factors HR can change to keep people engaged.</p>
+          <div class="tags"><span class="tag">JD-R model</span><span class="tag">Employee engagement</span><span class="tag">Research</span></div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <p class="when">2024 – 2025<small>Firdaus &amp; Associates</small></p>
+        <div>
+          <h3>Rental Collection Turnaround</h3>
+          <p>I introduced regular defaulter reports and closer tracking of monthly collections, which made follow-up faster and more consistent. I also kept resident and tenancy records up to date in iCare and Bukku.</p>
+          <span class="impact">Impact: collection effectiveness up 75%, 90% of complaints resolved within 24 hours</span>
+          <div class="tags"><span class="tag">Reporting</span><span class="tag">Customer service</span><span class="tag">Bukku</span><span class="tag">iCare</span></div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <p class="when">2021<small>Youth Empowerment Foundation</small></p>
+        <div>
+          <h3>Protégé Program: Student Placements &amp; Welfare</h3>
+          <p>I coordinated student applications and registrations to public universities (IPTA) and technical colleges, organised educational programmes and events for 100+ participants, and served as caretaker for the Foundation's transit home, looking after students' welfare and safety.</p>
+          <span class="impact">Impact: 50+ students placed into higher education</span>
+          <div class="tags"><span class="tag">Student welfare</span><span class="tag">Event coordination</span><span class="tag">Community</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Experience</p>
+    <h2 class="title">Work</h2>
+    <div>
+      <div class="job">
+        <p class="date">Jun 2025 – Present</p>
+        <div>
+          <h3>HR Manager</h3>
+          <p class="co">TSS Assets Sdn. Bhd. / SMT World Sdn. Bhd. / U Mobile</p>
+          <ul>
+            <li>Run end-to-end payroll for up to 90 employees, including statutory contributions (EPF, SOCSO, EIS, PCB).</li>
+            <li>Handle all foreign worker matters through FOMEMA and FWCMS.</li>
+            <li>Handle disciplinary matters and show cause letters in line with company policy.</li>
+            <li>Supervise 15–20 staff and support the full recruitment cycle, onboarding 20+ new employees.</li>
+            <li>Design and run team-building, motivational and leadership training.</li>
+            <li>Oversee admin across 7 retail branches and build SOPs, incentive schemes and policies.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <p class="date">Oct 2024 – Jun 2025</p>
+        <div>
+          <h3>Admin &amp; Self Collection Officer</h3>
+          <p class="co">Firdaus &amp; Associates Property</p>
+          <ul>
+            <li>Managed tenancy records and resident databases in iCare and Bukku, improving efficiency by 80%.</li>
+            <li>Improved rental collection effectiveness by 75% through defaulter reporting and follow-up.</li>
+            <li>Coordinated vendors for maintenance, with 95% of requests completed on time.</li>
+            <li>Kept financial records with zero audit discrepancies.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <p class="date">Jul 2021 – Jun 2024</p>
+        <div>
+          <h3>Corporate Services &amp; R&amp;D Officer</h3>
+          <p class="co">Rakyat Digital Sdn. Bhd.</p>
+          <ul>
+            <li>Conducted due diligence on prospective partners, reducing partnership risk by 40%.</li>
+            <li>Carried out market research that contributed to 80% growth in business development initiatives.</li>
+            <li>Prepared feasibility studies, reports and business proposals for management.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <p class="date">Jul 2021 – Dec 2021</p>
+        <div>
+          <h3>Admin Executive &amp; Student Affairs Coordinator</h3>
+          <p class="co">Youth Empowerment Foundation (Protégé Program)</p>
+          <ul>
+            <li>Supported HR leadership with correspondence, scheduling and confidential documents.</li>
+            <li>Coordinated programmes and events for 100+ participants.</li>
+            <li>Helped place 50+ students into public universities and technical colleges.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section id="education">
+  <div class="wrap">
+    <p class="eyebrow">Education &amp; Credentials</p>
+    <h2 class="title">Always learning</h2>
+    <div class="edu">
+      <div class="ecard">
+        <p class="lbl">Postgraduate</p>
+        <h3>Master of Human Resource Management</h3>
+        <p>Open University Malaysia (OUM) · 2025 – 2027 (expected)</p>
+        <span class="badge">Dean's List · every semester</span>
+      </div>
+      <div class="ecard">
+        <p class="lbl">Undergraduate</p>
+        <h3>Bachelor of English for Industries (Hons)</h3>
+        <p>University of Selangor (UNISEL) · 2018 – 2021</p>
+        <p style="margin-top:8px">A strong base in professional communication, which I use every day when writing policies, letters and HR correspondence.</p>
+      </div>
+      <div class="ecard">
+        <p class="lbl">Secondary School</p>
+        <h3>Collège du Léman</h3>
+        <p>Geneva, Switzerland</p>
+        <p style="margin-top:8px">An international school where I studied until I was 17, and where I learned French.</p>
+      </div>
+      <div class="ecard">
+        <p class="lbl">Systems</p>
+        <h3>HR &amp; Office Tools</h3>
+        <div class="chips">
+          <span class="chip">Info-Tech HRMS</span><span class="chip">Xenix</span><span class="chip">FWCMS</span><span class="chip">MS Excel</span><span class="chip">Word</span><span class="chip">PowerPoint</span><span class="chip">SQL</span><span class="chip">Bukku</span><span class="chip">iCare</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTERESTS ============ -->
+<section id="interests" class="alt interests">
+  <div class="wrap camp">
+    <div>
+      <p class="eyebrow">Interests</p>
+      <h2 class="title">Outside the office</h2>
+      <p>When I'm not at my desk, you'll most likely find me outdoors. I love <span class="hl">camping and spending time close to nature</span>. Setting up camp, slowing down and being away from screens is how I recharge.</p>
+      <p>Camping teaches you things that carry over into work: plan ahead, stay calm when the weather changes, and work as a team to get the tent up before dark.</p>
+      <div class="chips"><span class="chip">🏕️ Camping</span><span class="chip">🌿 Nature</span><span class="chip">🌄 The great outdoors</span><span class="chip">🇫🇷 French</span></div>
+    </div>
+    <div class="gallery">
+      <!-- Camping photos & video: upload files with these exact names -->
+      <div class="tile t1"><video src="camp-video.mp4.mp4" autoplay muted loop playsinline preload="auto"></video></div>
+      <div class="tile t2"><img src="camp1.jpg.jpeg" alt="Camping trip" loading="lazy" onerror="this.remove()"></div>
+      <div class="tile t3"><img src="camp2.jpg.jpeg" alt="Camping trip" loading="lazy" onerror="this.remove()"></div>
+      <div class="tile t4"><img src="camp3.jpg.jpeg" alt="Camping trip" loading="lazy" onerror="this.remove()"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2>Let's talk.</h2>
+    <p>I'm looking for an HR role in the Klang Valley, ideally around Rawang. If you're hiring or know someone who is, I'd love to hear from you.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:alliesyafauzi@gmail.com">alliesyafauzi@gmail.com</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/alliesya-fauzi/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="Resume%20Aliesya.pdf" target="_blank" rel="noopener">Download CV</a>
+    </div>
+  </div>
+</section>
+<footer>© 2026 Aliesya Faziera <span>· Rawang, Selangor</span></footer>
+
+</body>
+</html>
