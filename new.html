@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aliesya Faziera — HR &amp; Administration Professional</title>
+<meta name="description" content="Aliesya Faziera: full-spectrum HR and Administration professional in Rawang, Selangor. Payroll, statutory compliance, industrial relations, foreign worker management, recruitment and training.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050507; --bg2:#0d0d12; --card:#14141b; --line:#26262f;
+  --ink:#f5f5f7; --muted:#8e8e98; --a1:#2dd4bf; --a2:#60a5fa; --a3:#a78bfa;
+  --grad:linear-gradient(100deg,var(--a1),var(--a2) 55%,var(--a3));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,video{display:block;max-width:100%}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{font-size:.8rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--a1);margin-bottom:14px}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+h2.big{font-size:clamp(2.4rem,6.5vw,5rem);font-weight:800;letter-spacing:-.035em;line-height:1.02}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px 22px;background:rgba(5,5,7,.6);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
+.logo{font-weight:800;text-decoration:none;letter-spacing:-.02em;font-size:1.1rem}
+.nav ul{display:flex;gap:26px;list-style:none}
+.nav ul a{text-decoration:none;font-size:.86rem;color:#c7c7cc;transition:color .2s}
+.nav ul a:hover{color:#fff}
+.nav .cta{font-size:.82rem;font-weight:600;text-decoration:none;padding:7px 16px;border-radius:99px;background:var(--ink);color:#000}
+.bar{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--grad);z-index:60}
+@media(max-width:820px){.nav ul{display:none}}
+
+/* scroll scenes: tall section + sticky viewport */
+.scene{position:relative}
+.stick{position:sticky;top:0;height:100vh;height:100dvh;overflow:hidden;display:flex;align-items:center;justify-content:center}
+
+/* HERO */
+#hero{height:300vh}
+.hero-name{position:absolute;font-size:clamp(4rem,17vw,15rem);font-weight:900;letter-spacing:-.06em;line-height:.85;text-align:center;white-space:nowrap;will-change:transform,opacity}
+.hero-name span{display:block}
+.hero-sub{position:absolute;z-index:3;bottom:9vh;text-align:center;color:var(--muted);font-size:.9rem;letter-spacing:.06em}
+.hero-sub i{display:block;margin:10px auto 0;width:22px;height:34px;border:2px solid #555;border-radius:12px;position:relative}
+.hero-sub i::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:#aaa;animation:wheel 1.6s infinite}
+@keyframes wheel{to{transform:translateY(10px);opacity:0}}
+.portrait{position:absolute;width:clamp(220px,28vw,380px);aspect-ratio:3/4;border-radius:28px;overflow:hidden;box-shadow:0 40px 120px rgba(45,212,191,.18);will-change:transform}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.hero-intro{position:absolute;right:max(20px,7vw);width:min(470px,44vw);opacity:0;will-change:transform,opacity}
+.hero-intro h1{font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:800;letter-spacing:-.04em;line-height:1.02;margin-bottom:16px}
+.hero-intro p{color:#b9b9c2;margin-bottom:22px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:99px;font-weight:600;font-size:.92rem;text-decoration:none;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--grad);color:#041014}
+.btn.s{border:1px solid #3a3a44;color:var(--ink)}
+.tag{display:inline-block;font-size:.78rem;color:var(--a1);border:1px solid rgba(45,212,191,.35);border-radius:99px;padding:5px 12px;margin-bottom:18px}
+@media(max-width:820px){
+  .hero-intro{left:20px;right:20px;width:auto;bottom:6vh;text-align:center}
+  .hero-intro .btns{justify-content:center}
+  .portrait{width:min(56vw,250px)}
+}
+
+/* WHY: word reveal */
+#why{height:260vh}
+#why .stick{padding:0 20px}
+.reveal-text{max-width:980px;font-size:clamp(1.7rem,4.2vw,3.3rem);font-weight:700;letter-spacing:-.025em;line-height:1.2}
+.reveal-text .w{opacity:.14;transition:opacity .15s linear}
+
+/* STATS */
+#stats{height:400vh}
+.stat{position:absolute;text-align:center;padding:0 20px;opacity:0;will-change:transform,opacity}
+.stat .n{font-size:clamp(6rem,24vw,17rem);font-weight:900;letter-spacing:-.06em;line-height:.9}
+.stat .l{font-size:clamp(1.1rem,2.4vw,1.6rem);font-weight:600;margin-top:12px}
+.stat .d{color:var(--muted);max-width:520px;margin:10px auto 0}
+.dots{position:absolute;right:28px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px}
+.dots b{width:6px;height:6px;border-radius:50%;background:#333;transition:all .3s}
+.dots b.on{background:var(--a1);height:22px;border-radius:4px}
+
+/* PROFILE */
+section.plain{padding:140px 0}
+.profile{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:center}
+.profile .ph{border-radius:28px;overflow:hidden;aspect-ratio:3/4;max-height:620px}
+.profile .ph img{width:100%;height:120%;object-fit:cover;will-change:transform}
+.profile p{color:#b9b9c2;margin-top:18px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:30px}
+.facts div{background:var(--bg);padding:14px 16px}
+.facts small{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.facts span{font-weight:600;font-size:.95rem}
+@media(max-width:820px){.profile{grid-template-columns:1fr}.profile .ph{max-height:480px}}
+
+/* CAPABILITIES horizontal */
+#caps{height:420vh}
+#caps .stick{justify-content:flex-start;align-items:center;flex-direction:column;justify-content:center}
+.caps-head{width:min(1120px,100% - 40px);margin-bottom:40px}
+.track{display:flex;gap:24px;padding-left:max(20px,calc((100vw - 1120px)/2));align-self:flex-start;will-change:transform}
+.cap{flex:0 0 min(78vw,420px);min-height:380px;border-radius:28px;padding:36px;background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden}
+.cap::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-80px;top:-80px;background:radial-gradient(circle,var(--c,rgba(45,212,191,.35)),transparent 70%)}
+.cap .num{font-size:.8rem;color:var(--muted);font-weight:600}
+.cap h3{font-size:1.7rem;letter-spacing:-.03em;margin:70px 0 18px;font-weight:800}
+.cap ul{list-style:none}
+.cap li{padding:9px 0;border-top:1px solid var(--line);color:#c7c7cc;font-size:.95rem}
+
+/* PROGRAMMES stacking cards */
+.stack{position:relative;padding-bottom:10vh}
+.pcard{position:sticky;top:calc(90px + var(--i) * 14px);margin-bottom:9vh;border-radius:30px;padding:clamp(28px,4vw,52px);background:var(--card);border:1px solid var(--line);min-height:62vh;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;transform-origin:50% 0;will-change:transform,filter}
+.pcard .when{font-size:.82rem;color:var(--muted)}
+.pcard h3{font-size:clamp(1.8rem,3.6vw,3rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-top:12px}
+.pcard p{color:#b9b9c2}
+.pcard .impact{margin-top:18px;font-weight:600;padding-left:14px;border-left:3px solid var(--a1)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{font-size:.76rem;padding:5px 11px;border-radius:99px;background:rgba(255,255,255,.06);color:#c7c7cc}
+.pcard .big-n{font-size:clamp(4rem,9vw,7.5rem);font-weight:900;letter-spacing:-.06em;line-height:.9;align-self:start}
+@media(max-width:820px){.pcard{grid-template-columns:1fr;gap:18px;min-height:auto}.pcard .big-n{font-size:3.6rem}}
+
+/* EXPERIENCE */
+.timeline{position:relative;margin-top:60px;padding-left:46px}
+.timeline .rail{position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--line)}
+.timeline .fill{position:absolute;inset:0;background:var(--grad);transform-origin:0 0;transform:scaleY(0)}
+.job{position:relative;padding-bottom:64px}
+.job::before{content:"";position:absolute;left:-42px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--a1)}
+.job .date{font-size:.82rem;color:var(--a1);font-weight:600}
+.job h3{font-size:clamp(1.4rem,2.6vw,2rem);font-weight:800;letter-spacing:-.03em;margin-top:6px}
+.job .co{color:var(--muted);margin-bottom:14px}
+.job ul{padding-left:18px;color:#b9b9c2}
+.job li{margin:6px 0}
+
+/* EDUCATION */
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:50px}
+.edu div{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px}
+.edu small{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a1)}
+.edu h3{font-size:1.25rem;margin:10px 0 6px;letter-spacing:-.02em}
+.edu p{color:var(--muted);font-size:.93rem}
+
+/* OUTDOORS */
+#out{height:280vh}
+.vid{position:absolute;width:min(92vw,960px);aspect-ratio:4/3;border-radius:30px;overflow:hidden;will-change:transform}
+.vid video{width:100%;height:100%;object-fit:cover}
+.out-title{position:absolute;text-align:center;z-index:2;padding:0 20px;will-change:opacity,transform}
+.out-title h2{text-shadow:0 10px 40px rgba(0,0,0,.6)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px;align-items:start}
+.gallery img{border-radius:22px;width:100%;aspect-ratio:3/4;object-fit:cover;will-change:transform}
+.out-copy{display:grid;grid-template-columns:1fr 1fr;gap:50px;color:#b9b9c2}
+@media(max-width:820px){.out-copy{grid-template-columns:1fr;gap:16px}.gallery{gap:10px}}
+
+/* CONTACT */
+#contact{padding:180px 0 60px;text-align:center}
+#contact h2{font-size:clamp(4rem,15vw,12rem);font-weight:900;letter-spacing:-.06em;line-height:.9}
+#contact p{color:#b9b9c2;max-width:560px;margin:26px auto 34px}
+#contact .btns{justify-content:center}
+footer{color:#5c5c66;font-size:.82rem;margin-top:120px}
+
+/* generic reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  #hero,#why,#stats,#caps,#out{height:auto}
+  .stick{position:relative;height:auto;min-height:100vh;flex-direction:column;gap:30px;padding:100px 20px;overflow:visible}
+  .hero-name,.hero-sub,.portrait,.hero-intro,.stat,.vid,.out-title{position:relative;opacity:1!important;transform:none!important;inset:auto;bottom:auto;right:auto}
+  .reveal-text .w{opacity:1}
+  .track{flex-wrap:wrap;transform:none!important;padding:0 20px}
+  .dots{display:none}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<nav class="nav">
+  <a class="logo" href="#top">Aliesya<span class="grad">.</span></a>
+  <ul>
+    <li><a href="#why">Why HR</a></li>
+    <li><a href="#profile">Profile</a></li>
+    <li><a href="#caps">Capabilities</a></li>
+    <li><a href="#work">Programmes</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+  </ul>
+  <a class="cta" href="#contact">Let's talk</a>
+</nav>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="scene" id="hero">
+  <div class="stick">
+    <div class="hero-name" id="heroName"><span>ALIESYA</span><span class="grad">FAZIERA</span></div>
+    <div class="portrait" id="portrait"><img src="dp.jpeg" alt="Aliesya Faziera"></div>
+    <div class="hero-intro" id="heroIntro">
+      <span class="tag">Open to HR roles · Klang Valley</span>
+      <h1>HR &amp; Administration <span class="grad">Professional</span></h1>
+      <p>Full-spectrum HR professional who keeps payroll accurate, compliance tight and people supported, from the first interview to the last day.</p>
+      <div class="btns">
+        <a class="btn p" href="mailto:alliesyafauzi@gmail.com">Let's talk</a>
+        <a class="btn s" href="Resume%20Aliesya.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </div>
+    <div class="hero-sub" id="heroSub">Scroll to explore<i></i></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="scene" id="why">
+  <div class="stick">
+    <p class="reveal-text" id="whyText">I grew up in Geneva, surrounded by people from all over the world. Even as a child I was drawn to anything that involved people: organising, helping, listening and bringing others together. HR isn't something I fell into. It's where I've always been heading.</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="scene" id="stats">
+  <div class="stick">
+    <div class="stat"><div class="n grad">90</div><div class="l">employees on monthly payroll</div><p class="d">Salary, overtime, allowances and EPF, SOCSO, EIS and PCB, accurate and on time every month.</p></div>
+    <div class="stat"><div class="n grad">20+</div><div class="l">new hires recruited and onboarded</div><p class="d">From job ads and interviews to orientation and the first week.</p></div>
+    <div class="stat"><div class="n grad">7</div><div class="l">retail branches running one playbook</div><p class="d">SOPs, incentive schemes and policies for 15–20 staff across every branch.</p></div>
+    <div class="stat"><div class="n grad">100%</div><div class="l">audit-ready, compliance-minded</div><p class="d">Statutory submissions on time, foreign worker permits kept valid, records always in order.</p></div>
+    <div class="dots" id="dots"><b></b><b></b><b></b><b></b></div>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section class="plain" id="profile">
+  <div class="wrap profile">
+    <div class="ph rv"><img id="para1" src="photo2.jpg.jpeg" alt="Aliesya at work"></div>
+    <div class="rv">
+      <p class="eyebrow">Profile</p>
+      <h2 class="big">Hi, I'm <span class="grad">Aliesya.</span></h2>
+      <p>I'm an HR and Administration professional with 6+ years of experience across telecommunications, engineering, property management and corporate services. Most recently I've been running HR at an engineering company: payroll, statutory submissions, foreign worker permits, recruitment and disciplinary matters. Before that I managed office operations for a retail business with 7 branches, supervising 15–20 staff.</p>
+      <p>I'm at my best when I'm building structure: clear SOPs, fair policies, clean records and a payroll that simply works every month. I'm also the person staff can talk to when something isn't right, because good HR is as much about trust as it is about paperwork.</p>
+      <div class="facts">
+        <div><small>Base</small><span>Rawang, Selangor</span></div>
+        <div><small>Studying</small><span>Master's in HRM, OUM (2027)</span></div>
+        <div><small>Languages</small><span>Malay · English · French</span></div>
+        <div><small>Raised in</small><span>Geneva, Switzerland</span></div>
+        <div><small>Target roles</small><span>HR Executive · HR &amp; Admin</span></div>
+        <div><small>Notice</small><span>1 month (2 weeks negotiable)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="scene" id="caps">
+  <div class="stick">
+    <div class="caps-head"><p class="eyebrow">Capabilities</p><h2 class="big">What I work with.</h2></div>
+    <div class="track" id="track">
+      <div class="cap"><span class="num">01</span><h3>Payroll &amp; Statutory</h3><ul><li>End-to-end payroll, up to 90 staff</li><li>EPF, SOCSO, EIS &amp; PCB</li><li>Overtime, allowances &amp; deductions</li><li>Info-Tech HRMS &amp; Xenix</li></ul></div>
+      <div class="cap" style="--c:rgba(96,165,250,.4)"><span class="num">02</span><h3>People &amp; Relations</h3><ul><li>Employee &amp; industrial relations</li><li>Disciplinary matters</li><li>Show cause letters</li><li>Policy compliance</li></ul></div>
+      <div class="cap" style="--c:rgba(167,139,250,.4)"><span class="num">03</span><h3>Talent</h3><ul><li>End-to-end recruitment</li><li>Interviews &amp; screening</li><li>Onboarding &amp; orientation</li><li>Leadership &amp; team-building training</li></ul></div>
+      <div class="cap" style="--c:rgba(244,114,182,.35)"><span class="num">04</span><h3>Compliance &amp; Admin</h3><ul><li>FOMEMA, FWCMS &amp; work permits</li><li>SOPs, policies &amp; incentive schemes</li><li>Audit-ready records</li><li>Multi-branch operations</li></ul></div>
+      <div class="cap" style="--c:rgba(251,191,36,.3)"><span class="num">05</span><h3>Systems</h3><ul><li>Info-Tech HRMS · Xenix · FWCMS</li><li>MS Excel · Word · PowerPoint</li><li>SQL</li><li>Bukku · iCare</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMMES -->
+<section class="plain" id="work" style="padding-bottom:40px">
+  <div class="wrap">
+    <p class="eyebrow rv">Programmes &amp; initiatives</p>
+    <h2 class="big rv" style="margin-bottom:60px">Work I've led.</h2>
+    <div class="stack" id="stack">
+      <article class="pcard" style="--i:0"><div><span class="big-n grad">90</span><p class="when">2026 – Present · Senior HR Executive</p><h3>Payroll for 90 employees</h3></div><div><p>I run the complete monthly payroll cycle: salary computation, overtime, allowances, deductions and statutory contributions for EPF, SOCSO, EIS and PCB, managed in Info-Tech and Xenix.</p><p class="impact">100% accurate, on-time monthly pay</p><div class="chips"><span>Payroll</span><span>Statutory</span><span>Info-Tech</span><span>Xenix</span></div></div></article>
+      <article class="pcard" style="--i:1"><div><span class="big-n grad">✓</span><p class="when">2026 – Present · Senior HR Executive</p><h3>Foreign worker compliance, end to end</h3></div><div><p>FOMEMA medical screening, work permit applications and renewals through FWCMS, and all supporting documentation. I track renewal dates so that permits never lapse.</p><p class="impact">Full compliance with immigration and labour regulations</p><div class="chips"><span>FOMEMA</span><span>FWCMS</span><span>Work permits</span></div></div></article>
+      <article class="pcard" style="--i:2"><div><span class="big-n grad">85%</span><p class="when">2025 – 2026 · Office Manager</p><h3>SOPs &amp; incentive schemes for 7 branches</h3></div><div><p>With seven branches running at once, everyone needed the same playbook. I wrote and rolled out SOPs, incentive schemes and internal policies so staff knew what was expected and how good work would be rewarded.</p><p class="impact">Employee productivity improved by 85%</p><div class="chips"><span>Policy writing</span><span>Change management</span><span>Multi-branch</span></div></div></article>
+      <article class="pcard" style="--i:3"><div><span class="big-n grad">20+</span><p class="when">2025 – 2026 · Office Manager</p><h3>Recruitment &amp; onboarding drive</h3></div><div><p>The full hiring cycle, from job ads and screening to interviews, then onboarding and orientation so new staff could settle in and contribute quickly.</p><p class="impact">20+ new employees hired and onboarded</p><div class="chips"><span>Recruitment</span><span>Interviewing</span><span>Onboarding</span></div></div></article>
+      <article class="pcard" style="--i:4"><div><span class="big-n grad">↑</span><p class="when">2025 – 2026 · Office Manager</p><h3>Team-building, motivation &amp; leadership programmes</h3></div><div><p>I designed and ran training programmes to strengthen teamwork, morale and performance, from planning objectives and activities to logistics and running the sessions.</p><p class="impact">Stronger teamwork and morale across branch teams</p><div class="chips"><span>Training design</span><span>Facilitation</span><span>Engagement</span></div></div></article>
+      <article class="pcard" style="--i:5"><div><span class="big-n grad">100%</span><p class="when">2025 – 2026 · Office Manager</p><h3>Audit-ready records system</h3></div><div><p>A structured filing system for HR and operational records, so anything important can be found in minutes and the company is ready for an audit at any time.</p><p class="impact">100% audit readiness</p><div class="chips"><span>Records management</span><span>Compliance</span></div></div></article>
+      <article class="pcard" style="--i:6"><div><span class="big-n grad">JD-R</span><p class="when">2025 – Present · Master's research</p><h3>Job demands, job resources &amp; employee disengagement</h3></div><div><p>For my Master's at OUM, I'm researching what drives disengagement among Malaysian employees using the JD-R model, which shows which workplace factors HR can change to keep people engaged.</p><div class="chips"><span>JD-R model</span><span>Engagement</span><span>Research</span></div></div></article>
+      <article class="pcard" style="--i:7"><div><span class="big-n grad">75%</span><p class="when">2024 – 2025 · Firdaus &amp; Associates</p><h3>Rental collection turnaround</h3></div><div><p>Regular defaulter reports and closer tracking of monthly collections made follow-up faster and more consistent, with resident and tenancy records kept current in iCare and Bukku.</p><p class="impact">Collection effectiveness up 75%; 90% of complaints resolved within 24 hours</p><div class="chips"><span>Reporting</span><span>Customer service</span><span>Bukku</span><span>iCare</span></div></div></article>
+      <article class="pcard" style="--i:8"><div><span class="big-n grad">50+</span><p class="when">2021 · Youth Empowerment Foundation</p><h3>Protégé Program: student placements &amp; welfare</h3></div><div><p>I coordinated applications to public universities and technical colleges, organised programmes for 100+ participants, and was caretaker of the Foundation's transit home.</p><p class="impact">50+ students placed into higher education</p><div class="chips"><span>Student welfare</span><span>Events</span><span>Community</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="plain" id="experience">
+  <div class="wrap">
+    <p class="eyebrow rv">Experience</p>
+    <h2 class="big rv">Six years, <span class="grad">people first.</span></h2>
+    <div class="timeline" id="timeline">
+      <div class="rail"><div class="fill" id="fill"></div></div>
+      <div class="job rv"><p class="date">Apr 2026 – Present</p><h3>Senior HR Executive</h3><p class="co">Hercules Engineering (SEA) Sdn. Bhd.</p><ul>
+        <li>Run end-to-end monthly payroll for office and factory employees, including EPF, SOCSO, EIS and PCB.</li>
+        <li>Drive the migration of payroll, leave and attendance from Xenix to Info-Tech HRMS.</li>
+        <li>Handle statutory submissions, including EA forms and CP8D, and support audits and Labour Department inspections.</li>
+        <li>Manage leave, attendance, overtime, medical, insurance and SOCSO claims.</li>
+        <li>Manage the employee lifecycle, from probation and confirmation to exit interview and final pay, with all contracts and HR letters.</li>
+        <li>Handle foreign worker matters, including FOMEMA and work permit documentation.</li>
+        <li>Lead recruitment for technical and finance roles, from job descriptions to induction.</li>
+        <li>Handle grievances, counselling and disciplinary matters, and advise managers on Employment Act matters.</li>
+        <li>Run appraisals, KPI reviews and probation assessments; report headcount, turnover and payroll costs to the Managing Director.</li>
+        <li>Draft and update the employee handbook, SOPs and HR policies.</li></ul></div>
+      <div class="job rv"><p class="date">Jun 2025 – Apr 2026</p><h3>Office Manager</h3><p class="co">TSS Assets Sdn. Bhd. / SMT World Sdn. Bhd. / U Mobile</p><ul>
+        <li>Oversaw admin operations across 7 retail branches and built SOPs, incentive schemes and policies.</li>
+        <li>Supervised 15–20 staff, administering attendance, leave, overtime and HR documentation.</li>
+        <li>Supported the full recruitment cycle, onboarding 20+ new employees.</li>
+        <li>Achieved 100% on-time daily sales reporting through SQL-based data verification.</li>
+        <li>Built a structured filing system that kept records audit-ready.</li>
+        <li>Role ended due to company restructuring.</li></ul></div>
+      <div class="job rv"><p class="date">Oct 2024 – Jun 2025</p><h3>Admin &amp; Self Collection Officer</h3><p class="co">Firdaus &amp; Associates Property</p><ul>
+        <li>Managed tenancy records and resident databases in iCare and Bukku, improving efficiency by 80%.</li>
+        <li>Improved rental collection effectiveness by 75% through defaulter reporting and follow-up.</li>
+        <li>Coordinated vendors for maintenance, with 95% of requests completed on time.</li>
+        <li>Kept financial records with zero audit discrepancies.</li></ul></div>
+      <div class="job rv"><p class="date">Jul 2021 – Jun 2024</p><h3>Corporate Services &amp; R&amp;D Officer</h3><p class="co">Rakyat Digital Sdn. Bhd.</p><ul>
+        <li>Conducted due diligence on prospective partners, reducing partnership risk by 40%.</li>
+        <li>Carried out market research that contributed to 80% growth in business development initiatives.</li>
+        <li>Prepared feasibility studies, reports and business proposals for management.</li></ul></div>
+      <div class="job rv" style="padding-bottom:0"><p class="date">Jul 2021 – Dec 2021</p><h3>Admin Executive &amp; Student Affairs Coordinator</h3><p class="co">Youth Empowerment Foundation (Protégé Program)</p><ul>
+        <li>Supported HR leadership with correspondence, scheduling and confidential documents.</li>
+        <li>Coordinated programmes and events for 100+ participants.</li>
+        <li>Helped place 50+ students into public universities and technical colleges.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="plain" id="education" style="padding-top:40px">
+  <div class="wrap">
+    <p class="eyebrow rv">Education</p>
+    <h2 class="big rv">Always learning.</h2>
+    <div class="edu">
+      <div class="rv"><small>Postgraduate</small><h3>Master of Human Resource Management</h3><p>Open University Malaysia · 2025 – 2027 (expected) · Dean's List every semester</p></div>
+      <div class="rv"><small>Undergraduate</small><h3>Bachelor of English for Industries (Hons)</h3><p>University of Selangor (UNISEL) · 2018 – 2021. A strong base in the professional writing I use every day for policies and HR letters.</p></div>
+      <div class="rv"><small>Secondary school</small><h3>Collège du Léman</h3><p>Geneva, Switzerland. An international school where I studied until 17 and learned French.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTDOORS -->
+<section class="scene" id="out">
+  <div class="stick">
+    <div class="vid" id="vid"><video src="camp-video.mp4.mp4" poster="camp1.jpg.jpeg" autoplay muted loop playsinline></video></div>
+    <div class="out-title" id="outTitle"><p class="eyebrow">Outside the office</p><h2 class="big">I recharge<br>outdoors.</h2></div>
+  </div>
+</section>
+<section class="plain" style="padding-top:60px">
+  <div class="wrap">
+    <div class="out-copy rv">
+      <p>When I'm not at my desk, you'll most likely find me camping. Setting up camp, slowing down and being away from screens is how I recharge.</p>
+      <p>Camping teaches things that carry over into work: plan ahead, stay calm when the weather changes, and work as a team to get the tent up before dark.</p>
+    </div>
+    <div class="gallery" id="gallery">
+      <img src="camp1.jpg.jpeg" alt="Camping trip" data-speed="-0.08">
+      <img src="camp2.jpg.jpeg" alt="Camping trip" data-speed="0.1" style="margin-top:60px">
+      <img src="camp3.jpg.jpeg" alt="Camping trip" data-speed="-0.04">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <p class="eyebrow rv">Contact</p>
+    <h2 class="rv">Let's <span class="grad">talk.</span></h2>
+    <p class="rv">I'm looking for an HR role in the Klang Valley, ideally around Rawang. If you're hiring or know someone who is, I'd love to hear from you.</p>
+    <div class="btns rv">
+      <a class="btn p" href="mailto:alliesyafauzi@gmail.com">alliesyafauzi@gmail.com</a>
+      <a class="btn s" href="https://www.linkedin.com/in/alliesya-fauzi/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn s" href="Resume%20Aliesya.pdf" target="_blank" rel="noopener">Download CV</a>
+    </div>
+    <footer>© 2026 Aliesya Faziera · Rawang, Selangor</footer>
+  </div>
+</section>
+</main>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const seg = (p, a, b) => clamp((p - a) / (b - a));          // 0..1 inside [a,b]
+  const ease = t => 1 - Math.pow(1 - t, 3);
+  const $ = s => document.querySelector(s);
+
+  // generic reveal
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  // split Why text into words
+  const why = $('#whyText');
+  why.innerHTML = why.textContent.trim().split(/\s+/).map(w => `<span class="w">${w}</span>`).join(' ');
+  const words = why.querySelectorAll('.w');
+
+  if (reduce) return;
+
+  const prog = el => { const r = el.getBoundingClientRect(); return clamp(-r.top / (r.height - innerHeight)); };
+  const isMobile = () => innerWidth <= 820;
+  const stats = document.querySelectorAll('.stat'), dots = document.querySelectorAll('#dots b');
+  const cards = [...document.querySelectorAll('.pcard')];
+  const gal = document.querySelectorAll('#gallery img');
+
+  function frame() {
+    const vh = innerHeight;
+    // progress bar
+    $('#bar').style.transform = `scaleX(${scrollY / (document.documentElement.scrollHeight - vh)})`;
+
+    // HERO
+    const hp = prog($('#hero'));
+    const a = ease(seg(hp, 0, .45)), b = ease(seg(hp, .45, .9));
+    $('#heroName').style.transform = `scale(${1 + a * .5})`;
+    $('#heroName').style.opacity = 1 - seg(hp, .05, .4);
+    $('#heroSub').style.opacity = 1 - seg(hp, 0, .1);
+    const m = isMobile();
+    const tx = m ? 0 : -b * innerWidth * .2;
+    const ty = (1 - a) * vh * .75 - (m ? b * vh * .18 : 0);
+    const sc = (.75 + a * .25) * (m ? 1 - b * .25 : 1);
+    $('#portrait').style.transform = `translate(${tx}px, ${ty}px) scale(${sc}) rotate(${(1 - a) * -6}deg)`;
+    $('#heroIntro').style.opacity = b;
+    $('#heroIntro').style.transform = m ? `translateY(${(1 - b) * 60}px)` : `translateX(${(1 - b) * 80}px)`;
+
+    // WHY words
+    const wp = seg(prog($('#why')), .05, .85) * words.length;
+    words.forEach((w, i) => w.style.opacity = .14 + .86 * clamp(wp - i));
+
+    // STATS: one at a time
+    const sp = prog($('#stats')) * stats.length;
+    stats.forEach((s, i) => {
+      const local = sp - i;                      // 0..1 while active
+      const inn = seg(local, 0, .25), out = seg(local, .75, 1);
+      const o = i === stats.length - 1 ? inn : inn * (1 - out);
+      s.style.opacity = i === 0 ? (1 - out) : o;
+      const y = i === 0 ? -out * 80 : (1 - inn) * 80 - out * 80;
+      s.style.transform = `translateY(${y}px) scale(${.92 + .08 * (i === 0 ? 1 : inn)})`;
+      dots[i].classList.toggle('on', Math.min(stats.length - 1, Math.floor(sp)) === i);
+    });
+
+    // CAPABILITIES horizontal track
+    const tr = $('#track');
+    const dist = tr.scrollWidth - innerWidth + Math.max(20, (innerWidth - 1120) / 2);
+    tr.style.transform = `translateX(${-ease(seg(prog($('#caps')), .05, .95)) * Math.max(0, dist)}px)`;
+
+    // PROGRAMME stack: shrink cards as the next one covers them
+    cards.forEach((c, i) => {
+      const next = cards[i + 1];
+      if (!next) return;
+      const r = next.getBoundingClientRect();
+      const t = clamp(1 - (r.top - 90) / vh);
+      c.style.transform = `scale(${1 - t * .06})`;
+      c.style.filter = `brightness(${1 - t * .45})`;
+    });
+
+    // EXPERIENCE rail
+    const tl = $('#timeline').getBoundingClientRect();
+    $('#fill').style.transform = `scaleY(${clamp((vh * .6 - tl.top) / tl.height)})`;
+
+    // PROFILE parallax
+    const pr = $('#para1').parentElement.getBoundingClientRect();
+    $('#para1').style.transform = `translateY(${-clamp((vh - pr.top) / (vh + pr.height)) * 16}%)`;
+
+    // OUTDOORS video grows
+    const op = prog($('#out'));
+    const g = ease(seg(op, 0, .6));
+    $('#vid').style.transform = `scale(${.45 + g * .55})`;
+    $('#vid').style.borderRadius = `${60 - g * 30}px`;
+    $('#outTitle').style.opacity = seg(op, .35, .65) * (1 - seg(op, .9, 1) * .3);
+    $('#outTitle').style.transform = `translateY(${(1 - seg(op, .35, .65)) * 40}px)`;
+
+    // gallery parallax
+    gal.forEach(img => {
+      const r = img.getBoundingClientRect();
+      img.style.transform = `translateY(${(r.top + r.height / 2 - vh / 2) * +img.dataset.speed}px)`;
+    });
+  }
+
+  let ticking = false;
+  const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { frame(); ticking = false; }); } };
+  addEventListener('scroll', req, { passive: true });
+  addEventListener('resize', req);
+  frame();
+})();
+</script>
+</body>
+</html>
