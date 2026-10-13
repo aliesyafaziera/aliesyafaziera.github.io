@@ -249,6 +249,15 @@ footer{color:var(--muted);font-size:.82rem;margin-top:80px}
 .viz.in .draw{stroke-dashoffset:0}
 @media(max-width:520px){.rows .r{grid-template-columns:92px 1fr 16px}.steps{flex-wrap:wrap}.steps>div{flex:1 1 40%}.dotgrid{gap:5px}}
 @media (prefers-reduced-motion:reduce){.rows .r em{width:var(--w)}.rows .r s,.steps>div,.files .f{opacity:1;transform:none}.grow{transform:none}.draw{stroke-dashoffset:0}.flow{animation:none}.dotgrid span{background:var(--a2)}}
+
+/* hero background name (option A) */
+.hero-bg{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(4px,1.2vh,14px);overflow:hidden;pointer-events:none;user-select:none;opacity:0;
+  -webkit-mask-image:radial-gradient(ellipse 75% 70% at 50% 50%,#000 35%,transparent 100%);mask-image:radial-gradient(ellipse 75% 70% at 50% 50%,#000 35%,transparent 100%)}
+.hero-bg .row{white-space:nowrap;font-size:clamp(3.6rem,8.5vw,7.8rem);font-weight:900;letter-spacing:-.04em;line-height:1;color:transparent;-webkit-text-stroke:1.2px rgba(205,174,118,.16);animation:drift 70s linear infinite}
+.hero-bg .row:nth-child(even){animation-direction:reverse;-webkit-text-stroke-color:rgba(243,239,232,.08)}
+.hero-bg .row span{padding-right:.4em}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.hero-bg .row{animation:none}.hero-bg{opacity:.8!important;position:absolute!important}}
 </style>
 </head>
 <body>
@@ -271,6 +280,7 @@ footer{color:var(--muted);font-size:.82rem;margin-top:80px}
 <!-- HERO -->
 <section class="scene" id="hero">
   <div class="stick">
+    <div class="hero-bg" id="heroBg" aria-hidden="true"><div class="row"><span>ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ </span><span aria-hidden="true">ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ </span></div><div class="row"><span>ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ </span><span aria-hidden="true">ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ </span></div><div class="row"><span>ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ </span><span aria-hidden="true">ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ </span></div><div class="row"><span>ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ </span><span aria-hidden="true">ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ </span></div><div class="row"><span>ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ </span><span aria-hidden="true">ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ </span></div><div class="row"><span>ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ </span><span aria-hidden="true">ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ ALIESYA FAZIERA ✦ </span></div></div>
     <div class="hero-name" id="heroName"><span>ALIESYA</span><span class="grad">FAZIERA</span></div>
     <div class="portrait" id="portrait"><img src="dp.jpeg" alt="Aliesya Faziera"></div>
     <div class="hero-intro" id="heroIntro">
@@ -506,6 +516,7 @@ footer{color:var(--muted);font-size:.82rem;margin-top:80px}
     const sc = (.75 + a * .25) * (m ? 1 - b * .25 : 1);
     $('#portrait').style.transform = `translate(${tx}px, ${ty}px) scale(${sc}) rotate(${(1 - a) * -6}deg)`;
     $('#heroIntro').style.opacity = b;
+    $('#heroBg').style.opacity = b;
     $('#heroIntro').style.transform = m ? `translateY(${(1 - b) * 60}px)` : `translateX(${(1 - b) * 80}px)`;
 
     // STATS: four columns rise in turn and count up
