@@ -191,18 +191,12 @@ footer{color:var(--muted);font-size:.82rem;margin-top:80px}
 .rv{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
 
+/* Keep scroll-linked effects for everyone (many office PCs turn OS animations off);
+   only stop things that move on their own. */
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  #hero,#stats,#caps,#out{height:auto}
-  .stick{position:relative;height:auto;min-height:100vh;flex-direction:column;gap:30px;padding:100px 20px;overflow:visible}
-  .reel{position:relative;flex-wrap:wrap;padding:20px}
-  .panel{transform:none!important;opacity:1!important}
-  .hero-name,.hero-sub,.portrait,.hero-intro,.stat,.out-title{position:relative;opacity:1!important;transform:none!important;inset:auto;bottom:auto;right:auto}
-  .reveal-text .w{opacity:1!important}
-  .stat{--t:1}
-  .track{flex-wrap:wrap;transform:none!important;padding:0 20px}
-  .dots{display:none}
-  .rv{opacity:1;transform:none}
+  .hero-sub i::after{animation:none}
+}
 }
 
 /* capability numbers */
@@ -268,7 +262,7 @@ footer{color:var(--muted);font-size:.82rem;margin-top:80px}
 .hero-bg .row:nth-child(even){animation-direction:reverse;-webkit-text-stroke-color:rgba(243,239,232,.08)}
 .hero-bg .row span{padding-right:.4em}
 @keyframes drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.hero-bg .row{animation:none}.hero-bg{opacity:.8!important;position:absolute!important}}
+@media (prefers-reduced-motion:reduce){.hero-bg .row{animation:none}}
 </style>
 </head>
 <body>
@@ -485,7 +479,6 @@ footer{color:var(--muted);font-size:.82rem;margin-top:80px}
 
 <script>
 (() => {
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   const seg = (p, a, b) => clamp((p - a) / (b - a));          // 0..1 inside [a,b]
   const ease = t => 1 - Math.pow(1 - t, 3);
@@ -508,7 +501,6 @@ footer{color:var(--muted);font-size:.82rem;margin-top:80px}
     if (e.isIntersecting) { const p = v.play(); if (p) p.catch(() => {}); } else v.pause();
   })), { threshold: .05 }).observe(document.querySelector('#out'));
 
-  if (reduce) return;
 
   const prog = el => { const r = el.getBoundingClientRect(); return clamp(-r.top / (r.height - innerHeight)); };
   const isMobile = () => innerWidth <= 820;
