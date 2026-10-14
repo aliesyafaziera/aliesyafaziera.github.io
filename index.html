@@ -191,13 +191,7 @@ footer{color:var(--muted);font-size:.82rem;margin-top:80px}
 .rv{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
 
-/* Keep scroll-linked effects for everyone (many office PCs turn OS animations off);
-   only stop things that move on their own. */
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .hero-sub i::after{animation:none}
-}
-}
+/* All animations run for everyone, including office PCs with OS animations off. */
 
 /* capability numbers */
 .cap .num{display:inline-block;font-size:clamp(3.6rem,6vw,5.2rem);font-weight:900;letter-spacing:-.05em;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -253,7 +247,6 @@ footer{color:var(--muted);font-size:.82rem;margin-top:80px}
 .draw{stroke-dasharray:600;stroke-dashoffset:600;transition:stroke-dashoffset 1.8s .5s ease}
 .viz.in .draw{stroke-dashoffset:0}
 @media(max-width:520px){.rows .r{grid-template-columns:92px 1fr 16px}.steps{flex-wrap:wrap}.steps>div{flex:1 1 40%}.dotgrid{gap:5px}}
-@media (prefers-reduced-motion:reduce){.rows .r em{width:var(--w)}.rows .r s,.steps>div,.files .f{opacity:1;transform:none}.grow{transform:none}.draw{stroke-dashoffset:0}.flow{animation:none}.dotgrid span{background:var(--a2)}}
 
 /* hero background name (option A) */
 .hero-bg{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(4px,1.2vh,14px);overflow:hidden;pointer-events:none;user-select:none;opacity:0;
@@ -262,7 +255,6 @@ footer{color:var(--muted);font-size:.82rem;margin-top:80px}
 .hero-bg .row:nth-child(even){animation-direction:reverse;-webkit-text-stroke-color:rgba(243,239,232,.08)}
 .hero-bg .row span{padding-right:.4em}
 @keyframes drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.hero-bg .row{animation:none}}
 </style>
 </head>
 <body>
